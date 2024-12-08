@@ -1,13 +1,6 @@
 const http = require('http')
 const mysql2 = require('mysql2')
-const database = mysql2.createConnection(
-    {
-        host: 'localhost',
-        user: 'root',  
-        password: 'bobo232324',
-        database: 'library_api',
-    }
-)
+const database = mysql2.createConnection
 const get_all_authors = async (req , res)=>{
     const [authors] = await database.promise().query('SELECT username FROM author')
     const authors_array = authors.map(author => author.username)
