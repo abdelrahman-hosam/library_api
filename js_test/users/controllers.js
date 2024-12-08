@@ -3,15 +3,7 @@ const bcrypt = require('bcrypt')
 const http = require('http')
 const dotenv = require('dotenv').config()
 const generate_tokens = require('./generateTokens')
-const database = mysql2.createConnection(
-    {
-        host: 'localhost',
-        user: 'root',  
-        password: 'bobo232324',
-        database: 'library_api',
-    }
-)
-
+const database = mysql2.createConnection
 const create_new_user = async (req , res) => {
     const username = req.body.username
     const password = req.body.password
